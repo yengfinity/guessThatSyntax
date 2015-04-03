@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="styles/styles.css">
+	 <link rel="stylesheet" href="js/popup.css">
+	<script src="popup.js"></script>
+	
+	<script src="js/jquery-1.9.1"></script>
+	
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+  	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  	<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+
+</head>
+
+<body>
+
+	<div id="header">
+		<h2>Guess That Syntax </h2>
+	</div>
+	
+	<div id="board">
+
+		<ul class="cards">
+			<li class="cards001 cardStyle" id="card1" onClick="addHandler()">
+				<img src="img/profile.png"> 
+				<br/><h3> HTML </h3>
+			</li>
+			<li class="cards002 cardStyle" id="card2">card 2</li>
+			<li class="cards003 cardStyle" id="card3">card 3</li>
+			<li class="cards004 cardStyle" id="card4">card 4</li>
+		</ul>
+
+	</div>
+
+	<ul class="cards">
+			<li class="cards001 cardStyle" id="card1" onClick="card1.printToHtml()">
+				<img src="img/profile.png"> 
+				<br/><h3> HTML </h3>
+				
+			</li>
+			<li class="cards002 cardStyle" id="card2">card 2</li>
+			<li class="cards003 cardStyle" id="card3">card 3</li>
+			<li class="cards004 cardStyle" id="card4">card 4</li>
+		</ul>
+	</div>
+
+	
+	<div class="yourCard">
+		<div class="myCard">
+
+			<h1>Your Card</h1>
+			
+		</div>		
+	</div>
+
+	<!--Test Modal-->
+	<a href="#openModal">Open Modal</a>
+
+	<div id="card1" class="modalDialog" onLoad="card1.printToHtml()">
+	    <div id="card1">	<a href="#close" title="Close" class="close">X</a>
+			<div id="card1">
+	        	<h2>Modal Box</h2>
+<!-- 			<img src="img/profile.png">
+ -->	        <p>This is a sample modal box that can be created using the powers of CSS3.</p>
+	        <p>You could do a lot of things here like have a pop-up ad that shows when your website loads, or create a login/register form for users.</p>
+	    	</div>
+	    </div>
+	</div>
+
+
+	<!--Form Toggle -->
+
+	<a href="javascript:toggleFormVisibility();" id="sub">Subscribe to our Newsletter!</a>
+<form name ="subscribe" id="subscribe_frm" action="#" style="display: none"> 
+<div>
+	<p>Please enter your subscription information:</p> 			
+	<p><label for="name">Your Name: </label><input type="text" name="name" id="txt_name"></p>
+	<p><label for="email">Your Email: </label><input type="text" name="email" id="txt_email"></p>
+	<p><label for="mail_format">Mail Format: <select name="mail_format" id="slt_mail_format">
+						<option value="TEXT">Plain Text</option>
+						<option value="HTML">HTML</option>
+						</select></p> 	
+	<p><input type="button" name="submit" value="submit" onclick="processFormData();" ></p>
+</div> 
+
+<a href="javascript:toggleFormVisibility();" id="nosub" style="display: none">No, Thank you! Some other time, perhaps....</a>
+</form>
+<!--End of Form Toggle -->
+
+
+<script src="js/script.js"></script>
+<!-- <script src="js/cards-generator.js"></script>
+ --></body>
+</html>
