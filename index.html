@@ -26,40 +26,45 @@
 		<span id="card1"> Pop out Interface Goes Here 1</span></div>
 	</div>
 
-	<div id="box1">
-		<span id="card2" onLoad="card3.printeMe()"> Pop out Interface Goes Here 2</span></div>
+	<div id="box2">
+		<span id="card2" onload="card3.printeMe()"> Pop out Interface Goes Here 2</span></div>
 	</div>
 
-	<div id="box1">
-		<span id="card3"> Pop out Interface Goes Here 3</span></div>
+	<div id="box3">
+		<span id="card3" onload="card3.printMe()"> Pop out Interface Goes Here 3</span></div>
 	</div>
-	
 
-	<div class="modal" id="box1"><p>All the railway lines north of the Thames and the South-Eastern people at Cannon Street had been warned by midnight on Sunday, and trains were being filled.  People were fighting savagely for standing-room in the carriages even at two o'clock.  By three, people were being trampled and crushed even in Bishopsgate Street, a couple of hundred yards or more from Liverpool Street station; revolvers were fired, people stabbed, and the policemen who had been sent to direct the traffic, exhausted and infuriated, were breaking the heads of the people they were called out to protect.</p></div>
+	<div id="box4">
+		<span id="card4" onload="card4.printMe()"> Pop out Interface Goes Here 4</span></div>
+	</div>
 	
 	<div id="board">
 
 		<ul class="cards">
-			<li class="cards001 cardStyle" id="card1" onClick="addHandler(card1)" >
+			<li class="cards001 cardStyle" id="card1">
 				<img class="fluid-img" src="img/profile.png"> 
 				<br/><h3> HTML </h3>
 				<button onclick="document.getElementById('box1').style.display='block'">Pop-out Interface
 				</button>
 			</li>
-			<li class="cards002 cardStyle" id="card2" onClick="addHandler(card2)" >
+			<li class="cards002 cardStyle" id="card2" >
 				<img class="fluid-img" src="img/profile.png"> 
 				<br/><h3> Head </h3>
-				<button onclick="document.getElementById('box1').style.display='block'">Pop-out Interface
+				<button onclick="document.getElementById('box2').style.display='block'">Pop-out Interface
 				</button>
 			</li>
-			<li class="cards003 cardStyle" id="card3" onClick="addHandler(card2)" >
+			<li class="cards003 cardStyle" id="card3" >
 				<img class="fluid-img" src="img/profile.png"> 
 				<br/><h3> Body </h3>
-				<button onclick="document.getElementById('box1').style.display='block'">Pop-out Interface
+				<button onclick="document.getElementById('box3').style.display='block'">Pop-out Interface
 				</button>
 			</li>
-			<li class="cards003 cardStyle" id="card3">card 3</li>
-			<li class="cards004 cardStyle" id="card4">card 4</li>
+			<li class="cards004 cardStyle" id="card4" >
+				<img class="fluid-img" src="img/profile.png"> 
+				<br/><h3> Footer </h3>
+				<button onclick="document.getElementById('box4').style.display='block'">Pop-out Interface
+				</button>
+			</li>
 		</ul>
 
 	</div>

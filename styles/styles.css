@@ -97,7 +97,7 @@ h3{
 }
 
 /** Pop up box settings **/
-  #box1{
+  #box1, #box2, #box3, #box4{
     position: fixed;
     /* top: 6em; */
     /* left: 10em; */
