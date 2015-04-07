@@ -30,10 +30,40 @@ var card3 = new Card('Body', 'html', 'Needed to styles and scripts', 'img/profil
 var card4 = new Card('Footer', 'html', 'Bottom tag to include info', 'img/profile.png', 'card4');;
 
 
-function addHandler(){
-    document.getElementById('card1').onclick = card1.printMe();
+
+//display random card onload
+window.onload = function() {
+  card.printMe();
+  doSomethingElse();
+};
+
+function addHandler(card){
+    document.getElementById(this).onclick = card.printMe();
     };
 
 //Print selected card to div
-// card1.printMe();
-// card3.printMe();
+card1.printMe();
+card2.printMe();
+card3.printMe();
+
+//loop to close which ever boxes were added in array
+var boxArray = ['box1','box2','box3'];
+window.addEventListener('mouseup', function(event){
+	for(var i=0; i < boxArray.length; i++){
+	    var box = document.getElementById(boxArray[i]);
+	    if(event.target != box && event.target.parentNode != box){
+		   box.style.display = 'none';
+	    }
+	}
+});
+
+//Toggle between 2 classes:
+// function toggleClass(el){
+// 	if(el.className == "class1"){
+// 		el.className = "modal";
+// 	} else if(el.className =="modal") {
+// 		el.className = "class1";
+// 	} else {
+// 		el.className = "modal";
+// 	}
+// }
