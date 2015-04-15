@@ -4,14 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="styles/styles.css">
-	 <link rel="stylesheet" href="js/popup.css">
+	<!---<link rel="stylesheet" href="js/popup.css">-->
 	<script src="popup.js"></script>
-	
-	<script src="js/jquery-1.9.1"></script>
-	<style>
-
-
-	</style>
 
 </head>
 
@@ -22,49 +16,27 @@
 		<h2 class="h2-center">Guess That Syntax </h2>
 	</div>
 
-	<div id="box1">
-		<span id="card1"> Pop out Interface Goes Here 1</span></div>
+	<div id="box1" class="box"
+		<span id="card1"> </span></div>
 	</div>
 
-	<div id="box2">
-		<span id="card2" onload="card3.printeMe()"> Pop out Interface Goes Here 2</span></div>
+	<div id="box2" class="box">
+		<span id="card2"> Pop out Interface Goes Here 2</span></div>
 	</div>
 
-	<div id="box3">
-		<span id="card3" onload="card3.printMe()"> Pop out Interface Goes Here 3</span></div>
+	<div id="box3" class="box">
+		<span id="card3"> Pop out Interface Goes Here 3</span></div>
 	</div>
 
-	<div id="box4">
-		<span id="card4" onload="card4.printMe()"> Pop out Interface Goes Here 4</span></div>
+	<div id="box4" class="box">
+		<span id="card4"> Pop out Interface Goes Here 4</span></div>
 	</div>
 	
 	<div id="board">
 
-		<ul class="cards">
-			<li class="cards001 cardStyle" id="card1">
-				<img class="fluid-img" src="img/profile.png"> 
-				<br/><h3> HTML </h3>
-				<button onclick="document.getElementById('box1').style.display='block'">Pop-out Interface
-				</button>
-			</li>
-			<li class="cards002 cardStyle" id="card2" >
-				<img class="fluid-img" src="img/profile.png"> 
-				<br/><h3> Head </h3>
-				<button onclick="document.getElementById('box2').style.display='block'">Pop-out Interface
-				</button>
-			</li>
-			<li class="cards003 cardStyle" id="card3" >
-				<img class="fluid-img" src="img/profile.png"> 
-				<br/><h3> Body </h3>
-				<button onclick="document.getElementById('box3').style.display='block'">Pop-out Interface
-				</button>
-			</li>
-			<li class="cards004 cardStyle" id="card4" >
-				<img class="fluid-img" src="img/profile.png"> 
-				<br/><h3> Footer </h3>
-				<button onclick="document.getElementById('box4').style.display='block'">Pop-out Interface
-				</button>
-			</li>
+		<ul class="cards" id="cardList">
+			<!--d cardList will be printed here*-->
+			
 		</ul>
 
 	</div>
@@ -72,7 +44,7 @@
 
 	
 	<div class="yourCard">
-		<div id="myRanCard" class="myCard">
+		<div id="myRandCard" class="myCard">
 
 			<h1>Your Card</h1>
 			
@@ -80,7 +52,32 @@
 	</div>
 
 
+	<div class="flip-container">
+		<div class="flipper" id="my-flipper">
+			<div class="front">
+				<span class="cards001 cardStyle" id="card1">
+					<img class="fluid-img" src="img/profile.png"> 
+					<br/><h3> HTML </h3>
+					<button class="more-info" id="moreInfoButton">More Info
+					</button>
+					<button class="hide-me" id="hide-me">Hide
+					</button>
+				</span>
+			</div>
+			<div class="back">
+			</h1>Back Page</h1>
+				<button class="more-info" id="flipToFront">More Info
+				</button>
+				<button class="hide-me" id="backMoreInfo">Click for Popup
+					</button>
+			</div>
+		</div>
+	</div>
+
+
+
 <script src="js/script.js"></script>
+<script src="js/new-script.js"></script>
 <!-- <script src="js/cards-generator.js"></script>
  --></body>
 </html>
