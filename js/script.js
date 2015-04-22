@@ -1,3 +1,5 @@
+/******* MODEL *********/
+
 //Prototype patter:
 var Card = function (cardName, family, desc, pic, cardId) {
 	this.cardName = cardName;
@@ -12,11 +14,13 @@ var Card = function (cardName, family, desc, pic, cardId) {
 	this.element = function() {
 		return document.getElementById(this.cardId);
 	}.bind(this);
+
+	//letting console know card started
   	console.log('Card instantiated');
 
 }
 
-
+//Presenting Data
 //To print to ID of cardId method
 Card.prototype.toLi = function() {
 	
@@ -41,47 +45,40 @@ Card.prototype.toLiShort = function() {
 	'<img src=\" ' + this.pic + '\">' +
 	"<br/><h3>" + this.cardName + "</h3>" +
 	"<button> Button Here </button>";
-
 };
 
-//Declare new card objects
-var card1 = new Card('HTML', 'html', 'Stands for Hyper Markup Language', 'img/profile.png', 'card1');
-var card2 = new Card('Head', 'html', 'Needed include external style sheets and scripts', 'img/profile.png', 'card2');
-var card3 = new Card('Body', 'html', 'This is needed to make markup show up', 'img/profile.png', 'card3');
-var card4 = new Card('Footer', 'html', 'Bottom tag to include info', 'img/profile.png', 'card4');
-
-
-//use script to generate the li's with these data
-var cards = [card1, card2, card3, card4];
-
-var listing = document.getElementById("cardList");
-
-//looping through arrays
-cards.forEach(function(card) {
-  listing.innerHTML += "<li class='card cardStyle' id=' " + card.cardId + " ' >" + card.toLi() + "</li>"    
-});
-
-//looping through objects
-var obj = {a: '1', b: '2'}
-Object.keys(obj).forEach(function(key) {
-	console.log(key, obj[key]);
-})
-
-//Card Random Generator 
-
-var cardArray = [card1, card2, card3, card4];
-
-
-function myRand(){
+// random element from array
+function getRandom(array){
 	var rand = Math.random();
-	rand *= cardArray.length;
-	return Math.floor(rand);
+	rand *= array.length;
+	var index = Math.floor(rand);
+	return array[index];
 }
+
 
 //display random card onload
 window.onload = function() {
-  document.getElementById("myRandCard").innerHTML = myRand();
+	//Declare new card objects 
+	var cardsArray = [
+		new Card('HTML', 'html', 'Stands for Hyper Markup Language', 'img/profile.png', 'card1'),
+		new Card('Head', 'html', 'Needed include external style sheets and scripts', 'img/profile.png', 'card2'),
+		new Card('Body', 'html', 'This is needed to make markup show up', 'img/profile.png', 'card3'),
+		new Card('Footer', 'html', 'Bottom tag to include info', 'img/profile.png', 'card4')
+	];
+
+	//Get the Element
+	var listing = document.getElementById("cardList");
+
+	//looping through arrays Printing Array to HTML
+	cardsArray.forEach(function(card) {
+	  listing.innerHTML += "<li class='card cardStyle' id=' " + card.cardId + " ' >" + card.toLi() + "</li>"    
+	});
+	
+	//Printing the random array to HTML 
+	document.getElementById("myRandCard").innerHTML = getRandom(cardsArray).toLi();
+
 };
+
 
 // function addHandler(card){
 //     document.getElementById(this).onclick = card.toLi();
